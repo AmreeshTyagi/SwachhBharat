@@ -1,12 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ionicframework.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+    <name>Swachh Bharat</name>
     <description>
-        Cordova settings for APP
+        Swachh Bharat App
     </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Swachh Bharat
-    </author>
     <content src="index.html" />
     <access origin="*" />
     <preference name="fullscreen" value="true" />
@@ -17,3 +14,4 @@
       <param name="ios-package" value="CDVStatusBar" onload="true" />
     </feature>
 </widget>
+<gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
