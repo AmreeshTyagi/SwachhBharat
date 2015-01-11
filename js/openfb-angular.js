@@ -67,8 +67,6 @@ angular.module('openfb', [])
             loginProcessed = false;
 
             logout();
-			
-			runningInCordova=true;
 
             // Check if an explicit oauthRedirectURL has been provided in init(). If not, infer the appropriate value
             if (!oauthRedirectURL) {
