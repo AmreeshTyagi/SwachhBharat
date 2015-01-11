@@ -1,0 +1,32 @@
+<ion-nav-view name="menuContent"></ion-nav-view>
+
+<ion-tabs class="tabs-icon-top tabs-top tabs-color-active-positive">
+  <!-- Feed Tab -->
+  <ion-tab title="Feeds" icon-off="ion-ios7-gear-outline" icon-on="ion-ios7-gear" href="#/app/person/me/feed">
+    <ion-nav-view name="tab-feeds"></ion-nav-view>
+  </ion-tab>
+
+
+  <!-- Friends Tab -->
+  <ion-tab title="Friends" icon-off="ion-ios7-chatboxes-outline" icon-on="ion-ios7-chatboxes" href="#/app/person/me/friends">
+    <ion-nav-view name="tab-friends"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Nomination Tab -->
+  <ion-tab title="Nomination" icon-off="ion-ios7-heart-outline" icon-on="ion-ios7-heart" href="#/app/person/me/nomination">
+    <ion-nav-view name="tab-nomination"></ion-nav-view>
+  </ion-tab>
+
+
+  <!-- Profile Tab -->
+  <ion-tab title="Profile" icon-off="ion-ios7-gear-outline" icon-on="ion-ios7-gear" href="#/app/profile">
+    <ion-nav-view name="tab-profile"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Logout Tab -->
+  <ion-tab title="Logout" icon-off="ion-ios7-gear-outline" icon-on="ion-ios7-gear" href="#" ng-click="logout()">
+    <!--<ion-nav-view name="tab-logout"></ion-nav-view>-->
+  </ion-tab>
+
+
+</ion-tabs>

@@ -1,0 +1,22 @@
+.ionic-logo {
+  display: block;
+  margin: 15px auto;
+  width: 96px;
+  height: 96px;
+}
+
+.item-body > p {
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+/*removing header space*/
+ .tabs {
+    top: 0px !important;
+    border-bottom-width:1px !important;
+    border-top-width:0px !important;
+  }
+  
+  .has-tabs-top {
+top: 54px !important;
+}

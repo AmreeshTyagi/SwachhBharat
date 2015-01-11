@@ -1,0 +1,30 @@
+<!--<div class="bar bar-header">-->
+<!--    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>-->
+<!--    <div class="button-bar">-->
+<!--        <button class="button button-icon icon ion-information"></button>-->
+<!--        <a class="button button-icon ion-plus-round" href="#/app/person/me/nomination"></a>-->
+<!--        <button class="button button-icon icon ion-heart"></button>-->
+<!--        <a class="button button-icon ion-person" href="#/app/profile"></a>-->
+<!--    </div>-->
+<!--</div>-->
+
+<ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+</ion-nav-buttons>
+
+<ion-content has-header="true" padding="true">
+
+    <div class="list card">
+        <div class="item">
+            <!--<h2>{{profile.name}}</h2>-->
+            <p>Email: {{profile.email}}</p>
+             <p>About me: {{profile.about_me}}</p>
+              <p>Nick name: {{profile.nick_name}}</p>
+               <p>Id: {{profile.user_id}}</p>
+        </div>
+        <!--<div class="item item-image">-->
+        <!--    <img ng-src="https://graph.facebook.com/{{ user.id }}/picture?width=400&height=400" />-->
+        <!--</div>-->
+    </div>
+
+</ion-content>
