@@ -1,4 +1,3 @@
-SwachhBharat
-============
+# swachhbharat
 
-Swachh Bharat Challenge
+a [Sails](http://sailsjs.org) application
