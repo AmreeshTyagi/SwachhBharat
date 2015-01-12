@@ -1,3 +1,3 @@
 # swachhbharat
 
-REST APIs server
+RSET API server for application
