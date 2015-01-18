@@ -18,8 +18,4 @@
   </feature>
   <gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
   <gap:plugin name="com.performanceactive.plugins.camera" version="1.4" />
-  <gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
-  <gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
-  <gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
-
 </widget>
