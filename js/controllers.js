@@ -4,7 +4,7 @@ angular.module('swachhbharat.controllers', [])
 
     $scope.logout = function() {
         OpenFB.logout();
-        window.sessionStorage['user_id'] = undefined;
+        window.sessionStorage['user_id']=undefined;
         $state.go('login');
     };
 
@@ -103,7 +103,7 @@ angular.module('swachhbharat.controllers', [])
                 $location.path('/app/profile');
             }
             else {
-                $rootScope.$emit('OAuthException');
+               $rootScope.$emit('OAuthException');
             }
             // fb.$push(data);
         });
@@ -166,7 +166,7 @@ angular.module('swachhbharat.controllers', [])
                 })
                 .error(function(data) {
                     $scope.hide();
-                    //  alert('hi');
+                    alert('hi');
                     alert(data.error.message);
                 });
         }
@@ -188,19 +188,4 @@ angular.module('swachhbharat.controllers', [])
             .error(function(data) {
                 alert(data.error.message);
             });
-    })
-    .controller('CameraCtrl', function($scope, Camera) {
-        $scope.getPhoto = function() {
-            Camera.getPicture().then(function(imageURI) {
-                console.log(imageURI);
-                $scope.lastPhoto = imageURI;
-            }, function(err) {
-                console.err(err);
-            }, {
-                quality: 75,
-                targetWidth: 320,
-                targetHeight: 320,
-                saveToPhotoAlbum: false
-            });
-        };
     });

@@ -11,25 +11,6 @@ angular.module('swachhbharat', ['ionic', 'openfb', 'swachhbharat.controllers','f
     };
     return tokenInjector;
 }])
-.factory('Camera', ['$q', function($q) {
-  return {
-    getPicture: function(options) {
-      var q = $q.defer();
-
-      navigator.customCamera.getPicture(function(result) {
-        // Do any magic you need
-        q.resolve(result);
-      }, function(err) {
-        q.reject(err);
-      }, options);
-
-      return q.promise;
-    }
-  }
-}])
-.config(function($compileProvider){
-  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-})
 .config(['$httpProvider', function($httpProvider) {  
     $httpProvider.interceptors.push('tokenInjector');
 }])
@@ -171,16 +152,6 @@ $rootScope.FbAppId='383399838503387';
                         controller: "NominationCtrl"
                     }
                 }
-            }).
-            state('take-photo', {
-                url: "/takephoto",
-                 templateUrl: "templates/new-challenge.html",
-                        controller: "CameraCtrl"
-                // views: {
-                //     'menuContent': {
-                       
-                //     }
-                //}
             })
             ;
 
