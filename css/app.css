@@ -1,22 +1,35 @@
 .ionic-logo {
-  display: block;
-  margin: 15px auto;
-  width: 96px;
-  height: 96px;
+    display: block;
+    margin: 15px auto;
+    width: 96px;
+    height: 96px;
 }
-
 .item-body > p {
     margin-top: 0;
     margin-bottom: 4px;
 }
-
 /*removing header space*/
- .tabs {
+
+.tabs {
     top: 0px !important;
-    border-bottom-width:1px !important;
-    border-top-width:0px !important;
-  }
-  
-  .has-tabs-top {
-top: 54px !important;
+    border-bottom-width: 1px !important;
+    border-top-width: 0px !important;
+}
+.has-tabs-top {
+    top: 54px !important;
+}
+.add-challenge {
+    background: white;
+    border-radius: 25px;
+    bottom: 15px;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 14px 16px;
+    position: fixed;
+    right: 25px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    height: 50px;
+    width: 50px;
+    text-decoration: none;
 }
