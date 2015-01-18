@@ -5,8 +5,11 @@ xmlns:gap = "http://phonegap.com/ns/1.0"
  xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Swachh Bharat</name>
     <description>
-        Swachh Bharat App
+        Swachh Bharat Challenge
     </description>
+    <author email="tyagi.amreesh@gmail.com" href="http://amreesh.com/">
+      Swachh Bharat App
+    </author>
     <content src="index.html" />
     <access origin="*" />
     <preference name="fullscreen" value="true" />
