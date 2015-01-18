@@ -18,5 +18,5 @@
   </feature>
   <gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
   <!--<gap:plugin name="com.performanceactive.plugins.camera" version="1.4" />-->
-  <gap:plugin name="org.apache.cordova.camera"/>
+  <gap:plugin name="org.apache.cordova.camera" version="0.3.2"/>
 </widget>
