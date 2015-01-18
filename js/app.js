@@ -16,7 +16,7 @@ angular.module('swachhbharat', ['ionic', 'openfb', 'swachhbharat.controllers','f
     getPicture: function(options) {
       var q = $q.defer();
 
-      navigator.customCamera.getPicture(function(result) {
+      navigator.camera.getPicture(function(result) {
         // Do any magic you need
         q.resolve(result);
       }, function(err) {
