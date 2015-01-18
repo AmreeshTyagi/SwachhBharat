@@ -1,25 +1,21 @@
-<?xml version='1.0' encoding='utf-8' ?>
-<widget id="com.ionicframework.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Swachh Bharat</name>
-  <description>
-    Swachh Bharat Challenge
-  </description>
-  <author email="tyagi.amreesh@gmail.com" href="http://amreesh.com/">
-    Swachh Bharat App
-  </author>
-  <content src="index.html" />
-  <access origin="*" />
-  <preference name="fullscreen" value="true" />
-  <preference name="webviewbounce" value="false" />
-  <preference name="UIWebViewBounce" value="false" />
-  <preference name="DisallowOverscroll" value="true" />
-  <feature name="StatusBar">
-    <param name="ios-package" value="CDVStatusBar" onload="true" />
-  </feature>
-  <gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
-  <gap:plugin name="com.performanceactive.plugins.camera" version="1.4" />
-  <gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
-  <gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
-  <gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
-
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ionicframework.starter" version="0.0.1" 
+xmlns="http://www.w3.org/ns/widgets" 
+xmlns:gap = "http://phonegap.com/ns/1.0"
+ xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Swachh Bharat</name>
+    <description>
+        Swachh Bharat App
+    </description>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <feature name="StatusBar">
+      <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+	<gap:plugin name="nl.genkgo.inappbrowser" version="0.5.0" />
 </widget>
+
