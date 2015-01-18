@@ -26,6 +26,7 @@ angular.module('swachhbharat', ['ionic', 'openfb', 'swachhbharat.controllers', '
                 return q.promise;
             }
         }
+<<<<<<< HEAD
     }]).
 factory('FileService',function($rootScope) {
     
@@ -60,6 +61,35 @@ factory('FileService',function($rootScope) {
     }])
     .run(function($rootScope, $state, $ionicPlatform, $window, OpenFB, $firebase, $http) {
         $rootScope.FbAppId = '383399838503387';
+=======
+    };
+    return tokenInjector;
+}])
+.factory('Camera', ['$q', function($q) {
+  return {
+    getPicture: function(options) {
+      var q = $q.defer();
+
+      navigator.camera.getPicture(function(result) {
+        // Do any magic you need
+        q.resolve(result);
+      }, function(err) {
+        q.reject(err);
+      }, options);
+
+      return q.promise;
+    }
+  }
+}])
+.config(function($compileProvider){
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+})
+.config(['$httpProvider', function($httpProvider) {  
+    $httpProvider.interceptors.push('tokenInjector');
+}])
+ .run(function ($rootScope, $state, $ionicPlatform, $window, OpenFB,$firebase,$http) {
+$rootScope.FbAppId='383399838503387';
+>>>>>>> origin/app
         OpenFB.init($rootScope.FbAppId);
         $rootScope.ServiceUrl = "https://server-batman-1.c9.io";
 
