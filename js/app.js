@@ -42,13 +42,13 @@ factory('FileService',function($rootScope) {
                     "description": "Uploaded from my phone"
                 };
 
-                ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
-                    function(e) {
-                      alert("file uploaded");
-                    },
-                    function(e) {
-                        alert("Upload failed");
-                    }, options);
+                // ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
+                //     function(e) {
+                //       alert("file uploaded");
+                //     },
+                //     function(e) {
+                //         alert("Upload failed");
+                //     }, options);
             }
         }
     })
