@@ -52,9 +52,9 @@ angular.module('swachhbharat', ['ionic', 'openfb', 'swachhbharat.controllers', '
     //         }
     //     }
     // })
-    .config(function($compileProvider) {
-        $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-    })
+    // .config(function($compileProvider) {
+    //     $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+    // })
     .config(['$httpProvider', function($httpProvider) {
         $httpProvider.interceptors.push('tokenInjector');
     }])
