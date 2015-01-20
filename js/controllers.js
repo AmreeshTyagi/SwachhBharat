@@ -189,12 +189,12 @@ angular.module('swachhbharat.controllers', [])
                 alert(data.error.message);
             });
     })
-    .controller('CameraCtrl', function($scope, Camera,FileService) {
+    .controller('CameraCtrl', function($scope, Camera) {
         $scope.getPhoto = function() {
             Camera.getPicture().then(function(imageURI) {
                 console.log(imageURI);
                 $scope.lastPhoto = imageURI;
-                FileService.uploadFile(imageURI);
+                //FileService.uploadFile(imageURI);
             }, function(err) {
                 console.err(err);
             }, {
