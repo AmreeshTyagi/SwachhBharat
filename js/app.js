@@ -42,7 +42,7 @@ factory('FileService',function() {
                     "description": "Uploaded from my phone"
                 };
                 alert(imageURI);
-                ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
+                ft.upload(imageURI, $rootScope.ServiceUrl + "/upload",
                     function(e) {
                       alert("file uploaded");
                     },
