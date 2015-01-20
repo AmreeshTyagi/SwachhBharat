@@ -41,7 +41,7 @@ factory('FileService',function() {
                 options.params = { // Whatever you populate options.params with, will be available in req.body at the server-side.
                     "description": "Uploaded from my phone"
                 };
-
+                alert(imageURI);
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
                     function(e) {
                       alert("file uploaded");
