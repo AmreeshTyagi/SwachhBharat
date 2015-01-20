@@ -39,7 +39,8 @@ factory('FileService',function() {
                 options.mimeType = "image/jpeg";
                 options.chunkedMode = false;
                 options.params = { // Whatever you populate options.params with, will be available in req.body at the server-side.
-                    "description": "Uploaded from my phone"
+                    "userId": window.sessionStorage['user_id'],
+                    "authToken":window.sessionStorage['auth_token']
                 };
                 alert(imageURI);
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
