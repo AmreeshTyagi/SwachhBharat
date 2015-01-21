@@ -42,13 +42,12 @@ factory('FileService',function() {
                     "userId": window.sessionStorage['user_id'],
                     "authToken":window.sessionStorage['auth_token']
                 };
-                alert(imageURI);
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
-                    function(e) {
-                      alert("file uploaded");
+                    function(data) {
+                        alert(data.fileName);
                     },
                     function(e) {
-                        alert("Upload failed");
+                        alert("File upload failed. Please try again.");
                     }, options);
             }
         }
