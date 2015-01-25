@@ -138,6 +138,7 @@ angular.module('openfb', [])
          * Application-level logout: we simply discard the token.
          */
         function logout() {
+            revokePermissions();
             tokenStore['auth_token'] = undefined;
         }
 

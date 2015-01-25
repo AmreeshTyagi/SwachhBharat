@@ -37,7 +37,7 @@ angular.module('swachhbharat.controllers', [])
 
     $scope.facebookLogin = function() {
 
-        OpenFB.login('email,read_stream,publish_stream').then(
+        OpenFB.login('email,read_stream,publish_stream,user_friends').then(
             function() {
 
                 OpenFB.get('/me').success(function(user) {
