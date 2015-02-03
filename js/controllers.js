@@ -218,14 +218,14 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
             $scope.challenge.photoFileName = FileService.getFileName();
             var challenge_data=angular.toJson($scope.challenge);
             alert(challenge_data);
-            var data={};
-            data.chal_name=challenge_data.name;
-            data.chal_desc=challenge_data.description;
-            data.chal_pic_list=challenge_data.photoFileName;
+            // var data=;
+            // data.chal_name=challenge_data.name;
+            // data.chal_desc=challenge_data.description;
+            // data.chal_pic_list=challenge_data.photoFileName;
             
-            alert(data);
+          //  alert(challenge_data);
 
-            $http.post($rootScope.ServiceUrl + "/createChallenge",data)
+            $http.post($rootScope.ServiceUrl + "/createChallenge",challenge_data)
                 .success(function(data) {
                     if (data.success) {
                         console.log(data);
