@@ -223,7 +223,7 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
             data.chal_desc=challenge_data.description;
             data.chal_pic_list=challenge_data.photoFileName;
             
-            
+            alert(data);
 
             $http.post($rootScope.ServiceUrl + "/createChallenge",data)
                 .success(function(data) {
