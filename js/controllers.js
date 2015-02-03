@@ -189,7 +189,7 @@ angular.module('swachhbharat.controllers', [])
                 alert(data.error.message);
             });
     })
-    .controller('CameraCtrl', function($scope, Camera,FileService) {
+    .controller('CameraCtrl', function($scope, Camera, FileService) {
         $scope.getPhoto = function() {
             Camera.getPicture().then(function(imageURI) {
                 console.log(imageURI);
@@ -204,4 +204,40 @@ angular.module('swachhbharat.controllers', [])
                 saveToPhotoAlbum: false
             });
         };
-    });
+    }).
+controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, FileService) {
+
+    $scope.challenge = {
+        createChallenge: function(challengeform) {
+            if (challengeform.$invalid)
+                return false;
+            // alert(FileService.getFileName());
+            // alert();
+            // $scope.data=angular.copy(data);
+
+            $scope.challenge.photoFileName = FileService.getFileName();
+            var challenge_data=angular.toJson($scope.challenge);
+            alert(challenge_data);
+            var data={};
+            data.chal_name=challenge_data.name;
+            data.chal_desc=challenge_data.description;
+            data.chal_pic_list=challenge_data.photoFileName;
+            
+            
+
+            $http.post($rootScope.ServiceUrl + "/createChallenge",data)
+                .success(function(data) {
+                    if (data.success) {
+                        console.log(data);
+                       // $scope.profile = data.profile;
+                        $location.path('/app/profile');
+                    }
+                    else {
+                        $rootScope.$emit('OAuthException');
+                    }
+                    // fb.$push(data);
+                });
+
+        }
+    }
+});

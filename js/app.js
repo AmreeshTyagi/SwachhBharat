@@ -28,7 +28,7 @@ angular.module('swachhbharat', ['ionic', 'openfb', 'swachhbharat.controllers', '
         }
     }]).
 factory('FileService',function() {
-    
+     var photoFileName="test.jpg";
         return {
             uploadFile: function(imageURI) {
                 var ft = new FileTransfer(),
@@ -44,11 +44,16 @@ factory('FileService',function() {
                 };
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
                     function(data) {
-                        alert(data.fileName);
+                       //alert(data.fileName);
+                       photoFileName=data.fileName;
+                      // return data.fileName;
                     },
                     function(e) {
                         alert("File upload failed. Please try again.");
                     }, options);
+            },
+            getFileName:function(){
+                return photoFileName;
             }
         }
     })
@@ -197,15 +202,14 @@ factory('FileService',function() {
                 }
             }
         }).
-        state('take-photo', {
-            url: "/takephoto",
-            templateUrl: "templates/new-challenge.html",
-            controller: "CameraCtrl"
-                // views: {
-                //     'menuContent': {
-
-            //     }
-            //}
+        state('app.newchallenge', {
+            url: "/newchallenge",
+             views: {
+                    'tab-feeds': {
+                        templateUrl: "templates/new-challenge.html",
+                        controller: "NewChallengeCtrl"
+                    }
+                }
         });
 
         // fallback route
