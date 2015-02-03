@@ -215,8 +215,9 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
             // alert();
             // $scope.data=angular.copy(data);
 
-            $scope.challenge.photoFileName = FileService.getFileName();
+           // $scope.challenge.photoFileName = FileService.getFileName();
             var challenge_data=angular.toJson($scope.challenge);
+            challenge_data.photoFileName=FileService.getFileName();
             alert(challenge_data);
             // var data=;
             // data.chal_name=challenge_data.name;
