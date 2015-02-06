@@ -191,6 +191,7 @@ angular.module('swachhbharat.controllers', [])
     })
     .controller('CameraCtrl', function($scope, Camera, FileService) {
         $scope.getPhoto = function() {
+            alert("calling getphoto");
             Camera.getPicture().then(function(imageURI) {
                 console.log(imageURI);
                 $scope.lastPhoto = imageURI;
@@ -214,33 +215,40 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
             // alert(FileService.getFileName());
             // alert();
             // $scope.data=angular.copy(data);
+            var photoFileName = FileService.getFileName();
+            if (photoFileName.length > 0) {
+                $scope.challenge.photoFileName = photoFileName;
+                var challenge_data = angular.toJson($scope.challenge);
+                // var photoFileName=FileService.getFileName();
+                // alert(photoFileName);
+                //challenge_data.photoFileName=photoFileName;
+                alert("challenge_data is:");
+                alert(challenge_data);
+                // var data=;
+                // data.chal_name=challenge_data.name;
+                // data.chal_desc=challenge_data.description;
+                // data.chal_pic_list=challenge_data.photoFileName;
 
-           $scope.challenge.photoFileName = FileService.getFileName();
-            var challenge_data=angular.toJson($scope.challenge);
-           // var photoFileName=FileService.getFileName();
-           // alert(photoFileName);
-            //challenge_data.photoFileName=photoFileName;
-            alert("challenge_data is:");
-            alert(challenge_data);
-            // var data=;
-            // data.chal_name=challenge_data.name;
-            // data.chal_desc=challenge_data.description;
-            // data.chal_pic_list=challenge_data.photoFileName;
-            
-          //  alert(challenge_data);
+                //  alert(challenge_data);
 
-            $http.post($rootScope.ServiceUrl + "/createChallenge",challenge_data)
-                .success(function(data) {
-                    if (data.success) {
-                        console.log(data);
-                       // $scope.profile = data.profile;
-                        $location.path('/app/profile');
-                    }
-                    else {
-                        $rootScope.$emit('OAuthException');
-                    }
-                    // fb.$push(data);
-                });
+                $http.post($rootScope.ServiceUrl + "/createChallenge", challenge_data)
+                    .success(function(data) {
+                        if (data.success) {
+                            console.log(data);
+                            // $scope.profile = data.profile;
+                            $location.path('/app/profile');
+                        }
+                        else {
+                            $rootScope.$emit('OAuthException');
+                        }
+                        // fb.$push(data);
+                    });
+            }
+            else
+            {
+                alert("Please capture some image.");
+            }
+
 
         }
     }
