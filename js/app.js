@@ -44,10 +44,11 @@ factory('FileService', function() {
                 };
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
                     function(data) {
-                        alert(data.response);
-                        alert(angular.toJson(data.response).fileName));
+                        var r = data.response;
+                        alert(r);
+                        alert(r.fileName);
 
-                        return data.response;
+                        return r.fileName;
                     },
                     function(e) {
                         alert("File upload failed. Please try again.");
