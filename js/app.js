@@ -44,7 +44,7 @@ factory('FileService',function() {
                 };
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
                     function(data) {
-                       alert("File name is:"+data.fileName);
+                       alert(data);
                        photoFileName=data.fileName;
                       // return data.fileName;
                     },
