@@ -49,6 +49,7 @@ factory('FileService', function() {
                         alert(data.responseCode);
                        // alert(r.fileName);
                         photoFileName = data.response;
+                        alert(photoFileName);
                       // return r.fileName;
                     },
                     function(e) {
