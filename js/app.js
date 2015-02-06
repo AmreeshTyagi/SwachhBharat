@@ -44,12 +44,12 @@ factory('FileService', function() {
                 };
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
                     function(data) {
-                        var r = data.response;
-                        alert(data.response);
-                        alert(data.responseCode);
+                       // var r = data.response;
+                       // alert(data.response);
+                        //alert(data.responseCode);
                        // alert(r.fileName);
                         photoFileName = data.response;
-                        alert(photoFileName);
+                        //alert(photoFileName);
                       // return r.fileName;
                     },
                     function(e) {

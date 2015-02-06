@@ -220,6 +220,7 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
            // var photoFileName=FileService.getFileName();
            // alert(photoFileName);
             //challenge_data.photoFileName=photoFileName;
+            alert("challenge_data is:");
             alert(challenge_data);
             // var data=;
             // data.chal_name=challenge_data.name;
