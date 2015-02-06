@@ -30,7 +30,7 @@ angular.module('swachhbharat', ['ionic', 'openfb', 'swachhbharat.controllers', '
 factory('FileService', function() {
         var photoFileName = "";
         return {
-            uploadFile: function(imageURI) {
+            uploadFile: function(imageURI,$scope) {
                 var ft = new FileTransfer(),
                     options = new FileUploadOptions();
 
@@ -42,6 +42,7 @@ factory('FileService', function() {
                     "userId": window.sessionStorage['user_id'],
                     "authToken": window.sessionStorage['auth_token']
                 };
+                $scope.show();
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
                     function(data) {
                        // var r = data.response;
@@ -49,6 +50,10 @@ factory('FileService', function() {
                         //alert(data.responseCode);
                        // alert(r.fileName);
                         photoFileName = data.response;
+                        if(data.responseCode==200)
+                        {
+                            $scope.hide();
+                        }
                         //alert(photoFileName);
                       // return r.fileName;
                     },

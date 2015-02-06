@@ -190,12 +190,20 @@ angular.module('swachhbharat.controllers', [])
             });
     })
     .controller('CameraCtrl', function($scope, Camera, FileService) {
+        $scope.show = function() {
+            $scope.loading = $ionicLoading.show({
+                content: 'Loading...'
+            });
+        };
+        $scope.hide = function() {
+            $scope.loading.hide();
+        };
         $scope.getPhoto = function() {
-            alert("calling getphoto");
+            //  alert("calling getphoto");
             Camera.getPicture().then(function(imageURI) {
                 console.log(imageURI);
                 $scope.lastPhoto = imageURI;
-                FileService.uploadFile(imageURI);
+                FileService.uploadFile(imageURI,$scope);
             }, function(err) {
                 console.err(err);
             }, {
@@ -217,6 +225,7 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
             // $scope.data=angular.copy(data);
             var photoFileName = FileService.getFileName();
             if (photoFileName.length > 0) {
+
                 $scope.challenge.photoFileName = photoFileName;
                 var challenge_data = angular.toJson($scope.challenge);
                 // var photoFileName=FileService.getFileName();
@@ -244,8 +253,7 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
                         // fb.$push(data);
                     });
             }
-            else
-            {
+            else {
                 alert("Please capture some image.");
             }
 
