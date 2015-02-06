@@ -46,9 +46,9 @@ factory('FileService', function() {
                     function(data) {
                         var r = data.response;
                         alert(r);
-                        alert(r.fileName);
-
-                        return r.fileName;
+                        alert(r[0].fileName);
+                        photoFileName = r.fileName;
+                      // return r.fileName;
                     },
                     function(e) {
                         alert("File upload failed. Please try again.");
