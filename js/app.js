@@ -28,7 +28,7 @@ angular.module('swachhbharat', ['ionic', 'openfb', 'swachhbharat.controllers', '
         }
     }]).
 factory('FileService', function() {
-        var photoFileName = "test.jpg";
+        var photoFileName = "";
         return {
             uploadFile: function(imageURI) {
                 var ft = new FileTransfer(),
