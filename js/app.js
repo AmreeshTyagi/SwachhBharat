@@ -45,7 +45,7 @@ factory('FileService', function() {
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
                     function(data) {
                         alert(data.response);
-                        alert(data.response.fileName);
+                        alert(angular.toJson(data.response).fileName));
 
                         return data.response;
                     },
