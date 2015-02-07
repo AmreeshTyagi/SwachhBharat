@@ -195,7 +195,11 @@ angular.module('swachhbharat.controllers', [])
                 content: 'Uploading...'
             });
         };
-        $scope.hide = function() {
+        $scope.hide = function(success, imageURI) {
+            if (success) {
+                $scope.lastPhoto = imageURI;
+                $scope.$parent.photoUploaded = true;
+            }
             $scope.loading.hide();
         };
         $scope.getPhoto = function() {
@@ -207,11 +211,10 @@ angular.module('swachhbharat.controllers', [])
                 FileService.uploadFile(imageURI, function(success) {
                     if (success) {
                         alert(imageURI);
-                        $scope.lastPhoto = imageURI;
-                        $scope.$parent.photoUploaded=true;
-                        $scope.hide();
+                        $scope.hide(true, imageURI);
                     }
                     else {
+                        $scope.hide(false);
                         alert("Please take photo again.");
                     }
                 });
