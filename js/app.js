@@ -221,6 +221,14 @@ factory('FileService', function() {
                     controller: "NewChallengeCtrl"
                 }
             }
+        }).state('app.challengefeeds', {
+            url: "/challengefeeds",
+            views: {
+                'tab-feeds': {
+                    templateUrl: "templates/challenge-feeds.html",
+                    controller: "ChallengeFeedCtrl"
+                }
+            }
         });
 
         // fallback route

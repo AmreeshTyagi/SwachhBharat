@@ -247,8 +247,8 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
                 // var photoFileName=FileService.getFileName();
                 // alert(photoFileName);
                 //challenge_data.photoFileName=photoFileName;
-                alert("challenge_data is:");
-                alert(challenge_data);
+               // alert("challenge_data is:");
+                //alert(challenge_data);
                 // var data=;
                 // data.chal_name=challenge_data.name;
                 // data.chal_desc=challenge_data.description;
@@ -259,9 +259,9 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
                 $http.post($rootScope.ServiceUrl + "/createChallenge", challenge_data)
                     .success(function(data) {
                         if (data.success) {
-                            console.log(data);
+                           // console.log(data);
                             // $scope.profile = data.profile;
-                            $location.path('/app/profile');
+                            $location.path('/app/challengefeeds');
                         }
                         else {
                             $rootScope.$emit('OAuthException');
@@ -276,4 +276,7 @@ controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, Fi
 
         }
     }
+}).
+controller('ChallengeFeedCtrl', function($scope, $rootScope, $http, $location, FileService) {
+    
 });
