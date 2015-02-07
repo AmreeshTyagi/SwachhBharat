@@ -206,6 +206,7 @@ angular.module('swachhbharat.controllers', [])
                 $scope.show();
                 FileService.uploadFile(imageURI, function(success) {
                     if (success) {
+                        alert(imageURI);
                         $scope.lastPhoto = imageURI;
                         $scope.$parent.photoUploaded=true;
                         $scope.hide();
