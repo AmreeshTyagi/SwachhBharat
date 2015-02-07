@@ -189,7 +189,7 @@ angular.module('swachhbharat.controllers', [])
                 alert(data.error.message);
             });
     })
-    .controller('CameraCtrl', function($scope, Camera, FileService) {
+    .controller('CameraCtrl', function($scope, Camera, FileService, $ionicLoading) {
         $scope.show = function() {
             $scope.loading = $ionicLoading.show({
                 content: 'Loading...'
@@ -203,7 +203,15 @@ angular.module('swachhbharat.controllers', [])
             Camera.getPicture().then(function(imageURI) {
                 console.log(imageURI);
                 $scope.lastPhoto = imageURI;
-                FileService.uploadFile(imageURI,$scope);
+                $scope.show();
+                FileService.uploadFile(imageURI, function(success) {
+                    if (success) {
+                        $scope.hide();
+                    }
+                    else {
+                        alert("Please take photo again.");
+                    }
+                });
             }, function(err) {
                 console.err(err);
             }, {

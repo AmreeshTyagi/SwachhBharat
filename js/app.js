@@ -30,7 +30,7 @@ angular.module('swachhbharat', ['ionic', 'openfb', 'swachhbharat.controllers', '
 factory('FileService', function() {
         var photoFileName = "";
         return {
-            uploadFile: function(imageURI,$scope) {
+            uploadFile: function(imageURI, callback) {
                 var ft = new FileTransfer(),
                     options = new FileUploadOptions();
 
@@ -42,20 +42,22 @@ factory('FileService', function() {
                     "userId": window.sessionStorage['user_id'],
                     "authToken": window.sessionStorage['auth_token']
                 };
-                $scope.show();
                 ft.upload(imageURI, "https://server-batman-1.c9.io" + "/upload",
                     function(data) {
-                       // var r = data.response;
-                       // alert(data.response);
+                        // var r = data.response;
+                        // alert(data.response);
                         //alert(data.responseCode);
-                       // alert(r.fileName);
-                        photoFileName = data.response;
-                        if(data.responseCode==200)
-                        {
-                            $scope.hide();
+                        // alert(r.fileName);
+                        if (data.responseCode == 200) {
+                            photoFileName = data.response;
+                            callback(true);
+
+                        }
+                        else {
+                            callback(false);
                         }
                         //alert(photoFileName);
-                      // return r.fileName;
+                        // return r.fileName;
                     },
                     function(e) {
                         alert("File upload failed. Please try again.");
