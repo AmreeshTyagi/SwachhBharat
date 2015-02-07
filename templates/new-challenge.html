@@ -19,7 +19,7 @@
                     <div class="item item-thumbnail-left" href="#" ng-controller="CameraCtrl">
                         <img ng-src="{{lastPhoto}}">
                         <p>
-                            <a ng-click="getPhoto()" class="button icon-left ion-ionic">Take Snapshot</a>
+                            <a ng-click="getPhoto()" class="button icon-left ion-ionic" ng-model="$parent.photoUploaded">Take Snapshot</a>
                         </p>
                     </div>
                     <!--<div class="item item-avatar">-->

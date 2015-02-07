@@ -191,13 +191,13 @@ angular.module('swachhbharat.controllers', [])
     })
     .controller('CameraCtrl', function($scope, Camera, FileService, $ionicLoading) {
         $scope.show = function() {
-            // $scope.loading = $ionicLoading.show({
-            //     content: 'Uploading...'
-            // });
+            $scope.loading = $ionicLoading.show({
+                content: 'Uploading...'
+            });
 
         };
         $scope.hide = function() {
-            // $scope.loading.hide();
+            $scope.loading.hide();
         };
         $scope.getPhoto = function() {
             //  alert("calling getphoto");
@@ -205,6 +205,7 @@ angular.module('swachhbharat.controllers', [])
                 // console.log(imageURI);
                 $scope.lastPhoto = imageURI;
                 $scope.$parent.photoUploaded = true;
+               // $scope.photoUploaded = true;
                 $scope.show();
                 FileService.uploadFile(imageURI, function(success) {
                     if (success) {
