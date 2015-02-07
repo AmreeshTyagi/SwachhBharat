@@ -17,7 +17,6 @@
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Snapshot</span>
                     <div class="item item-thumbnail-left" href="#" ng-controller="CameraCtrl">
-                        {{getThumbnail()}}
                         <img ng-src="{{getThumbnail()}}">
                         <p>
                             <a ng-click="getPhoto()" class="button icon-left ion-ionic">Take Snapshot</a>
@@ -41,8 +40,8 @@
                 {{photoUploaded}}
                 test
                 {{uploaded()}}
-                <input ng-show="uploaded()" type="submit" class="button button-block button-positive" value=" Create Challenge" />
-                <input ng-show="photoUploaded" type="submit" class="button button-block button-positive" value=" Create Challenge" />
+                <input ng-show="uploaded()" type="submit" class="button button-block button-positive" value=" Create Challenge1" />
+                <input ng-show="photoUploaded" type="submit" class="button button-block button-positive" value=" Create Challenge2" />
             </form>
         </div>
 
