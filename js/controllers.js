@@ -191,30 +191,28 @@ angular.module('swachhbharat.controllers', [])
     })
     .controller('CameraCtrl', function($scope, Camera, FileService, $ionicLoading) {
         $scope.show = function() {
-            $scope.loading = $ionicLoading.show({
-                content: 'Uploading...'
-            });
+            // $scope.loading = $ionicLoading.show({
+            //     content: 'Uploading...'
+            // });
+
         };
-        $scope.hide = function(success, imageURI) {
-            if (success) {
-                $scope.lastPhoto = imageURI;
-                $scope.$parent.photoUploaded = true;
-            }
-            $scope.loading.hide();
+        $scope.hide = function() {
+            // $scope.loading.hide();
         };
         $scope.getPhoto = function() {
             //  alert("calling getphoto");
             Camera.getPicture().then(function(imageURI) {
                 // console.log(imageURI);
-
+                $scope.lastPhoto = imageURI;
+                $scope.$parent.photoUploaded = true;
                 $scope.show();
                 FileService.uploadFile(imageURI, function(success) {
                     if (success) {
-                        alert(imageURI);
-                        $scope.hide(true, imageURI);
+                        //alert(imageURI);
+                        $scope.hide();
                     }
                     else {
-                        $scope.hide(false);
+                        $scope.hide();
                         alert("Please take photo again.");
                     }
                 });
