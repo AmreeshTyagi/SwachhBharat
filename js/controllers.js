@@ -190,6 +190,7 @@ angular.module('swachhbharat.controllers', [])
             });
     })
     .controller('CameraCtrl', function($scope, Camera, FileService, $ionicLoading) {
+        $scope.lastPhoto = "";
         $scope.show = function() {
             $scope.loading = $ionicLoading.show({
                 content: 'Uploading...'
@@ -199,17 +200,22 @@ angular.module('swachhbharat.controllers', [])
         $scope.hide = function() {
             $scope.loading.hide();
         };
+
+        $scope.getThumbnail = function() {
+            return $scope.lastPhoto;
+        };
         $scope.getPhoto = function() {
             //  alert("calling getphoto");
             Camera.getPicture().then(function(imageURI) {
                 // console.log(imageURI);
-                $scope.lastPhoto = imageURI;
-                $scope.$parent.photoUploaded = true;
-               // $scope.photoUploaded = true;
+
+                // $scope.photoUploaded = true;
                 $scope.show();
                 FileService.uploadFile(imageURI, function(success) {
                     if (success) {
                         //alert(imageURI);
+                        $scope.$parent.photoUploaded = true;
+                        $scope.lastPhoto = imageURI;
                         $scope.hide();
                     }
                     else {
@@ -229,6 +235,9 @@ angular.module('swachhbharat.controllers', [])
     }).
 controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, FileService) {
     $scope.photoUploaded = false;
+    $scope.uploaded = function() {
+        return $scope.photoUploaded;
+    };
     $scope.challenge = {
         createChallenge: function(challengeform) {
             if (challengeform.$invalid)
