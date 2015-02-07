@@ -201,9 +201,6 @@ angular.module('swachhbharat.controllers', [])
             $scope.loading.hide();
         };
 
-        $scope.getThumbnail = function() {
-            return $scope.lastPhoto;
-        };
         $scope.getPhoto = function() {
             //  alert("calling getphoto");
             Camera.getPicture().then(function(imageURI) {
@@ -235,9 +232,6 @@ angular.module('swachhbharat.controllers', [])
     }).
 controller('NewChallengeCtrl', function($scope, $rootScope, $http, $location, FileService) {
     $scope.photoUploaded = false;
-    $scope.uploaded = function() {
-        return $scope.photoUploaded;
-    };
     $scope.challenge = {
         createChallenge: function(challengeform) {
             if (challengeform.$invalid)
